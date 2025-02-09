@@ -12,6 +12,11 @@ class Board:
                 print('  -----------')
         print()
 
+    
+    def move(self, player, coordinates):
+        self.board[coordinates[0]][coordinates[1]] = f' {player.mark} '
+
+
 
 if __name__ == '__main__':
     board = Board()
