@@ -14,7 +14,11 @@ class Board:
 
     
     def move(self, player, coordinates):
-        self.board[coordinates[0]][coordinates[1]] = f' {player.mark} '
+        if self.board[coordinates[0]][coordinates[1]] == ' . ':
+            self.board[coordinates[0]][coordinates[1]] = f' {player.mark} '
+            return True
+        else:
+            return False
 
 
 

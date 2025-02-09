@@ -16,15 +16,25 @@ def round():
     board = Board()
     board.show()
     while game:
-        player_move = input('Please enter the coordinates of the space you want to mark. e.g. 13 would be row 1 column 3 (top right): ')
-        coords = [int(item)-1 for item in player_move]
-        board.move(current_player, coords)
-        board.show()
-        if current_player.mark == 'X':
-            current_player = player2
-        else:
-            current_player = player1
-        print(f"\nIt's {current_player.name}'s turn")
+        while True:
+            try:
+                player_move = input('Please enter the coordinates of the space you want to mark. e.g. 13 would be row 1, column 3 (top right): ')
+                coords = [int(item)-1 for item in player_move]
+                if len(coords) != 2:
+                    print("Wrong amount of numbers!")
+                    continue
+                if not board.move(current_player, coords):
+                    print('That spot is already taken!')
+                    continue
+            except (IndexError, ValueError):
+                print('Please make sure you entered the numbers correctly')
+                continue
+            board.show()
+            if current_player.mark == 'X':
+                current_player = player2
+            else:
+                current_player = player1
+            print(f"\nIt's {current_player.name}'s turn")
 
 if __name__ == "__main__":
     # Init players
