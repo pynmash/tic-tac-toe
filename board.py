@@ -1,6 +1,5 @@
 class Board:
     def __init__(self):
-        # self.board = [[' . ', ' . ', ' . '], [' . ', ' . ', ' . '], [' . ', ' . ', ' . ']]
         self.board = [['   ', '   ', '   '], ['   ', '   ', '   '], ['   ', '   ', '   ']]
 
     def show(self):
@@ -12,6 +11,20 @@ class Board:
             if row[0] < len(self.board) -1:
                 print('  -----------')
         print()
+
+    def check_win(self):
+        spaces_left = False
+        # rows
+        for row in self.board:
+            if "   " in row:
+                spaces_left = True
+                continue
+            elif len(set(row)) == 1:
+                return "win"
+        if not spaces_left:
+            return 'draw'
+        return False
+        
 
     
     def move(self, player, coordinates):

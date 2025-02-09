@@ -30,6 +30,11 @@ def round():
                 print('Please make sure you entered the numbers correctly')
                 continue
             board.show()
+            result = board.check_win()
+            if result == 'win':
+                print(f'The winner is {current_player.name}!')
+            if result == 'draw':
+                print('It\'s a draw!')
             if current_player.mark == 'X':
                 current_player = player2
             else:
