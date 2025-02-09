@@ -1,6 +1,7 @@
 class Board:
     def __init__(self):
-        self.board = [[' . ', ' . ', ' . '], [' . ', ' . ', ' . '], [' . ', ' . ', ' . ']]
+        # self.board = [[' . ', ' . ', ' . '], [' . ', ' . ', ' . '], [' . ', ' . ', ' . ']]
+        self.board = [['   ', '   ', '   '], ['   ', '   ', '   '], ['   ', '   ', '   ']]
 
     def show(self):
         print()
@@ -14,7 +15,7 @@ class Board:
 
     
     def move(self, player, coordinates):
-        if self.board[coordinates[0]][coordinates[1]] == ' . ':
+        if self.board[coordinates[0]][coordinates[1]] == '   ':
             self.board[coordinates[0]][coordinates[1]] = f' {player.mark} '
             return True
         else:
