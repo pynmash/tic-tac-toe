@@ -21,6 +21,25 @@ class Board:
                 continue
             elif len(set(row)) == 1:
                 return "win"
+
+        # columns
+        for column in zip(*self.board):
+            if "   " in column:
+                continue
+            elif len(set(column)) == 1:
+                return "win"
+
+        # Diagonals
+        all_cells = [item for lst in self.board for item in lst]
+        # Top left to bottom right
+        if all_cells[0] == all_cells[4] and all_cells[4] == all_cells[8]:
+            return "win"
+        
+        # Top right to bottom left
+        if all_cells[2] == all_cells[4] and all_cells[4] == all_cells[6]:
+            return "win"
+
+        # no spaces left
         if not spaces_left:
             return 'draw'
         return False

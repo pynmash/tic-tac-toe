@@ -33,8 +33,10 @@ def round():
             result = board.check_win()
             if result == 'win':
                 print(f'The winner is {current_player.name}!')
+                game = False
             if result == 'draw':
                 print('It\'s a draw!')
+                game = False
             if current_player.mark == 'X':
                 current_player = player2
             else:
