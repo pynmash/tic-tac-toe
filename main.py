@@ -23,7 +23,7 @@ def round():
     board.show()
     while True:
         try:
-            player_move = input('Please enter the coordinates of the space you want to mark. e.g. 13 would be row 1, column 3 (top right): ')
+            player_move = input('Please enter the coordinates of the space you want to mark. e.g. 1C would be row 1, column 3 (top right): ')
             coords = []
             coords_pattern = re.compile('[1-3][a-c]')
             if coords_pattern.match(player_move.lower()):
