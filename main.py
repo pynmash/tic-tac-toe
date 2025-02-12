@@ -46,7 +46,7 @@ def game(number_of_rounds):
     for i in range(number_of_rounds):
         print('\nROUND', i+1)
         round()
-        print(f'The scores ad the end of this round are:\n{player1.name}: {player1.wins}\n{player2.name}: {player2.wins}')
+        print(f'The scores at the end of this round are:\n{player1.name}: {player1.wins}\n{player2.name}: {player2.wins}')
         
 
 if __name__ == "__main__":
