@@ -7,6 +7,13 @@
 from player import Player
 from board import Board
 from random import choice
+import re
+
+columns = {
+    'a': 0,
+    'b': 1,
+    'c': 2
+}
 
 def round():
     starting_player = choice((player1, player2))
@@ -17,7 +24,13 @@ def round():
     while True:
         try:
             player_move = input('Please enter the coordinates of the space you want to mark. e.g. 13 would be row 1, column 3 (top right): ')
-            coords = [int(item)-1 for item in player_move]
+            coords = []
+            coords_pattern = re.compile('[1-3][a-c]')
+            if coords_pattern.match(player_move.lower()):
+                coords.append(int(player_move[0])-1)
+                coords.append(columns[player_move[1].lower()])
+                print(coords)
+
             if len(coords) != 2:
                 print("Wrong amount of numbers!")
                 continue

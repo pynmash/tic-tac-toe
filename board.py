@@ -4,7 +4,7 @@ class Board:
 
     def show(self):
         print()
-        top_row = [' 1 ', ' 2 ', ' 3 ']
+        top_row = [' A ', ' B ', ' C ']
         print(" ", " ".join(top_row))
         for row in enumerate(self.board):
             print(row[0] + 1, '|'.join(row[1]))
@@ -53,8 +53,10 @@ class Board:
 
     
     def move(self, player, coordinates):
+        print(coordinates)
         if self.board[coordinates[0]][coordinates[1]] == '   ':
             self.board[coordinates[0]][coordinates[1]] = f' {player.mark} '
+            print(coordinates)
             return True
         else:
             return False
