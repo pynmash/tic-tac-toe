@@ -25,7 +25,7 @@ def round():
                 print('That spot is already taken!')
                 continue
         except (IndexError, ValueError):
-            print('Please make sure you entered the numbers correctly')
+            print('Please make sure you entered the coordinates correctly')
             continue
         board.show()
         result = board.check_win()
