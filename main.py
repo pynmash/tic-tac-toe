@@ -69,5 +69,16 @@ if __name__ == "__main__":
         player2_name = "O"
     player1 = Player(player1_name.upper(), "X")
     player2 = Player(player2_name.upper(), "O")
+    while True:
+        try:
+            rounds = input('How many rounds would you like to play? (default=3): ')
+            if rounds == '':
+                rounds = 3
+            else:
+                rounds = int(rounds)
+        except TypeError:
+            print('Please only use numbers here, or leave blank to use the default number of rounds')
+            continue
+        break
     print(f"Round 1: {player1.name} VS {player2.name}")
-    game(3)
+    game(rounds)
