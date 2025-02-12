@@ -1,15 +1,19 @@
 class Board:
     def __init__(self):
-        self.board = [['   ', '   ', '   '], ['   ', '   ', '   '], ['   ', '   ', '   ']]
+        self.board = [
+            ["   ", "   ", "   "],
+            ["   ", "   ", "   "],
+            ["   ", "   ", "   "],
+        ]
 
     def show(self):
         print()
-        top_row = [' A ', ' B ', ' C ']
+        top_row = [" A ", " B ", " C "]
         print(" ", " ".join(top_row))
         for row in enumerate(self.board):
-            print(row[0] + 1, '|'.join(row[1]))
-            if row[0] < len(self.board) -1:
-                print('  -----------')
+            print(row[0] + 1, "|".join(row[1]))
+            if row[0] < len(self.board) - 1:
+                print("  -----------")
         print()
 
     def check_win(self):
@@ -31,7 +35,10 @@ class Board:
 
         # Diagonals
         all_cells = [item for lst in self.board for item in lst]
-        diagonals = [[all_cells[0], all_cells[4], all_cells[8]],[all_cells[2], all_cells[4], all_cells[6]]]
+        diagonals = [
+            [all_cells[0], all_cells[4], all_cells[8]],
+            [all_cells[2], all_cells[4], all_cells[6]],
+        ]
         for diagonal in diagonals:
             if "   " in diagonal:
                 continue
@@ -40,29 +47,26 @@ class Board:
         # Top left to bottom right
         # if all_cells[0] == all_cells[4] and all_cells[4] == all_cells[8]:
         #     return "win"
-        
+
         # # Top right to bottom left
         # if all_cells[2] == all_cells[4] and all_cells[4] == all_cells[6]:
         #     return "win"
 
         # no spaces left
         if not spaces_left:
-            return 'draw'
+            return "draw"
         return False
-        
 
-    
     def move(self, player, coordinates):
         print(coordinates)
-        if self.board[coordinates[0]][coordinates[1]] == '   ':
-            self.board[coordinates[0]][coordinates[1]] = f' {player.mark} '
+        if self.board[coordinates[0]][coordinates[1]] == "   ":
+            self.board[coordinates[0]][coordinates[1]] = f" {player.mark} "
             print(coordinates)
             return True
         else:
             return False
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     board = Board()
     board.show()
