@@ -15,7 +15,7 @@ def round():
     while True:
         try:
             player_move = input(
-                "Please enter the coordinates of the space you want to mark. e.g. 1C would be row 1, column 3 (top right): "
+                f"Please enter the coordinates of the space you want to place your {current_player.mark}. e.g. 1C would be row 1, column 3 (top right): "
             )
             coords = []
             coords_pattern = re.compile("[1-3][a-c]")
