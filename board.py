@@ -58,10 +58,8 @@ class Board:
         return False
 
     def move(self, player, coordinates):
-        print(coordinates)
         if self.board[coordinates[0]][coordinates[1]] == "   ":
             self.board[coordinates[0]][coordinates[1]] = f" {player.mark} "
-            print(coordinates)
             return True
         else:
             return False

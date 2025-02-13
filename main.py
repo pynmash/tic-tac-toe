@@ -22,7 +22,6 @@ def round():
             if coords_pattern.match(player_move.lower()):
                 coords.append(int(player_move[0]) - 1)
                 coords.append(columns[player_move[1].lower()])
-                print(coords)
 
             if len(coords) != 2:
                 print("Wrong amount of numbers!")
