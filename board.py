@@ -44,13 +44,6 @@ class Board:
                 continue
             elif len(set(diagonal)) == 1:
                 return "win"
-        # Top left to bottom right
-        # if all_cells[0] == all_cells[4] and all_cells[4] == all_cells[8]:
-        #     return "win"
-
-        # # Top right to bottom left
-        # if all_cells[2] == all_cells[4] and all_cells[4] == all_cells[6]:
-        #     return "win"
 
         # no spaces left
         if not spaces_left:
