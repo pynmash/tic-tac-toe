@@ -62,6 +62,8 @@ if __name__ == "__main__":
     print("Welcome to TIC-TAC-TOE")
     player1_name = input("Enter the name of the first player: ")
     player2_name = input("Enter the name of the second player: ")
+    if player1_name.lower() == 'chester' or player2_name.lower() == 'chester':
+        print('\nHey Chester! Hope you enjoyed the sonic movie today! I can\'t wait to see it. Shadow looks so cool!\n')
     if player1_name == "":
         player1_name = "X"
     if player2_name == "":
